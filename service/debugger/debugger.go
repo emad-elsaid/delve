@@ -2171,6 +2171,10 @@ func (d *Debugger) LockTarget() {
 	d.targetMutex.Lock()
 }
 
+func (d *Debugger) TryLockTarget() bool {
+	return d.targetMutex.TryLock()
+}
+
 // UnlockTarget releases the target mutex.
 func (d *Debugger) UnlockTarget() {
 	d.targetMutex.Unlock()
