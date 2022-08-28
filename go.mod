@@ -1,4 +1,4 @@
-module github.com/go-delve/delve
+module github.com/emad-elsaid/delve
 
 go 1.16
 
