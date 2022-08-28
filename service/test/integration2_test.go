@@ -18,15 +18,15 @@ import (
 	"testing"
 	"time"
 
-	protest "github.com/go-delve/delve/pkg/proc/test"
-	"github.com/go-delve/delve/service/debugger"
+	protest "github.com/emad-elsaid/delve/pkg/proc/test"
+	"github.com/emad-elsaid/delve/service/debugger"
 
-	"github.com/go-delve/delve/pkg/goversion"
-	"github.com/go-delve/delve/pkg/logflags"
-	"github.com/go-delve/delve/service"
-	"github.com/go-delve/delve/service/api"
-	"github.com/go-delve/delve/service/rpc2"
-	"github.com/go-delve/delve/service/rpccommon"
+	"github.com/emad-elsaid/delve/pkg/goversion"
+	"github.com/emad-elsaid/delve/pkg/logflags"
+	"github.com/emad-elsaid/delve/service"
+	"github.com/emad-elsaid/delve/service/api"
+	"github.com/emad-elsaid/delve/service/rpc2"
+	"github.com/emad-elsaid/delve/service/rpccommon"
 )
 
 var normalLoadConfig = api.LoadConfig{
@@ -1058,7 +1058,7 @@ func TestClientServer_FindLocations(t *testing.T) {
 
 	if goversion.VersionAfterOrEqual(runtime.Version(), 1, 13) {
 		withTestClient2("pkgrenames", t, func(c service.Client) {
-			someFuncLoc := findLocationHelper(t, c, "github.com/go-delve/delve/_fixtures/internal/dir%2eio.SomeFunction:0", false, 1, 0)[0]
+			someFuncLoc := findLocationHelper(t, c, "github.com/emad-elsaid/delve/_fixtures/internal/dir%2eio.SomeFunction:0", false, 1, 0)[0]
 			findLocationHelper(t, c, "dirio.SomeFunction:0", false, 1, someFuncLoc)
 		})
 	}
@@ -2497,7 +2497,7 @@ func TestIssue2162(t *testing.T) {
 }
 
 func TestDetachLeaveRunning(t *testing.T) {
-	// See https://github.com/go-delve/delve/issues/2259
+	// See https://github.com/emad-elsaid/delve/issues/2259
 	if testBackend == "rr" {
 		return
 	}

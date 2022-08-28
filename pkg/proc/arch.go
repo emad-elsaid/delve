@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-delve/delve/pkg/dwarf/frame"
-	"github.com/go-delve/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/dwarf/frame"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
 )
 
 // Arch represents a CPU architecture.

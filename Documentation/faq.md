@@ -12,9 +12,9 @@ Currently Delve supports (GOOS / GOARCH):
 
 There is no planned ETA for support of other architectures or operating systems. Bugs tracking requested support are:
 
-- [32bit ARM support](https://github.com/go-delve/delve/issues/328)
-- [PowerPC support](https://github.com/go-delve/delve/issues/1564)
-- [OpenBSD](https://github.com/go-delve/delve/issues/1477)
+- [32bit ARM support](https://github.com/emad-elsaid/delve/issues/328)
+- [PowerPC support](https://github.com/emad-elsaid/delve/issues/1564)
+- [OpenBSD](https://github.com/emad-elsaid/delve/issues/1477)
 
 See also: [backend test health](backend_test_health.md).
 
@@ -107,4 +107,4 @@ The substitute-path feature can be used to solve this problem, see `config help 
 
 The `source` command could also be useful in troubleshooting this problem, it shows the list of file paths that has been embedded by the compiler into the executable.
 
-If you still think this is a bug in Delve and not a configuration problem, open an [issue](https://github.com/go-delve/delve/issues), filling the issue template and including the logs produced by delve with the options `--log --log-output=rpc,dap`.
+If you still think this is a bug in Delve and not a configuration problem, open an [issue](https://github.com/emad-elsaid/delve/issues), filling the issue template and including the logs produced by delve with the options `--log --log-output=rpc,dap`.

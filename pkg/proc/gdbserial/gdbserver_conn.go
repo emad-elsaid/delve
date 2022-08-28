@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-delve/delve/pkg/logflags"
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/logflags"
+	"github.com/emad-elsaid/delve/pkg/proc"
 	"github.com/sirupsen/logrus"
 )
 
@@ -1107,7 +1107,7 @@ func (conn *gdbConn) threadStopInfo(threadID string) (sp stopPacket, err error) 
 		// can assume it is the spurious extra stop packet and simply ignore it.
 		// An example of a problematic interaction is in the commit message for
 		// this change.
-		// See https://github.com/go-delve/delve/issues/3013.
+		// See https://github.com/emad-elsaid/delve/issues/3013.
 
 		conn.conn.SetReadDeadline(time.Now().Add(10 * time.Millisecond))
 		resp, err = conn.recv(conn.outbuf.Bytes(), "thread stop info", false)

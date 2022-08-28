@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/proc"
 )
 
 // SetPC sets the RIP register to the value specified by `pc`.

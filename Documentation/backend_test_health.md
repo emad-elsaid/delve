@@ -22,5 +22,5 @@ Tests skipped by each supported backend:
 	* 2 upstream issue - https://github.com/golang/go/issues/29322
 * windows skipped = 5
 	* 1 broken
-	* 3 see https://github.com/go-delve/delve/issues/2768
+	* 3 see https://github.com/emad-elsaid/delve/issues/2768
 	* 1 upstream issue

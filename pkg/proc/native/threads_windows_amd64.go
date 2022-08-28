@@ -3,9 +3,9 @@ package native
 import (
 	"errors"
 
-	"github.com/go-delve/delve/pkg/proc"
-	"github.com/go-delve/delve/pkg/proc/amd64util"
-	"github.com/go-delve/delve/pkg/proc/winutil"
+	"github.com/emad-elsaid/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc/amd64util"
+	"github.com/emad-elsaid/delve/pkg/proc/winutil"
 )
 
 func newContext() *winutil.AMD64CONTEXT {

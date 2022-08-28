@@ -13,7 +13,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-delve/delve/pkg/logflags"
+	"github.com/emad-elsaid/delve/pkg/logflags"
 )
 
 // for testing

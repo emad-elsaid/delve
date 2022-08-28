@@ -3,10 +3,10 @@ package fbsdutil
 import (
 	"fmt"
 
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/dwarf/regnum"
-	"github.com/go-delve/delve/pkg/proc"
-	"github.com/go-delve/delve/pkg/proc/amd64util"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/dwarf/regnum"
+	"github.com/emad-elsaid/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc/amd64util"
 )
 
 // AMD64Registers implements the proc.Registers interface for the native/freebsd

@@ -6,10 +6,10 @@ import (
 
 	sys "golang.org/x/sys/windows"
 
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc"
 )
 
-const enableHardwareBreakpoints = false // see https://github.com/go-delve/delve/issues/2768
+const enableHardwareBreakpoints = false // see https://github.com/emad-elsaid/delve/issues/2768
 
 // waitStatus is a synonym for the platform-specific WaitStatus
 type waitStatus sys.WaitStatus

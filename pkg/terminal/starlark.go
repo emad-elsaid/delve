@@ -1,9 +1,9 @@
 package terminal
 
 import (
-	"github.com/go-delve/delve/pkg/terminal/starbind"
-	"github.com/go-delve/delve/service"
-	"github.com/go-delve/delve/service/api"
+	"github.com/emad-elsaid/delve/pkg/terminal/starbind"
+	"github.com/emad-elsaid/delve/service"
+	"github.com/emad-elsaid/delve/service/api"
 )
 
 type starlarkContext struct {

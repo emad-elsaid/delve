@@ -5,10 +5,10 @@ import (
 
 	sys "golang.org/x/sys/unix"
 
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/proc"
-	"github.com/go-delve/delve/pkg/proc/amd64util"
-	"github.com/go-delve/delve/pkg/proc/fbsdutil"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc/amd64util"
+	"github.com/emad-elsaid/delve/pkg/proc/fbsdutil"
 )
 
 // SetPC sets RIP to the value specified by 'pc'.

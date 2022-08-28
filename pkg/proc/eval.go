@@ -16,11 +16,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-delve/delve/pkg/dwarf/godwarf"
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/dwarf/reader"
-	"github.com/go-delve/delve/pkg/goversion"
-	"github.com/go-delve/delve/pkg/logflags"
+	"github.com/emad-elsaid/delve/pkg/dwarf/godwarf"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/dwarf/reader"
+	"github.com/emad-elsaid/delve/pkg/goversion"
+	"github.com/emad-elsaid/delve/pkg/logflags"
 )
 
 var errOperationOnSpecialFloat = errors.New("operations on non-finite floats not implemented")
@@ -310,7 +310,7 @@ func (scope *EvalScope) Locals(flags localsFlags) ([]*Variable, error) {
 			}
 			v.Name = name[1:]
 			v.Flags |= VariableEscaped
-			// See https://github.com/go-delve/delve/issues/2049 for details
+			// See https://github.com/emad-elsaid/delve/issues/2049 for details
 			if locationExpr != nil {
 				locationExpr.isEscaped = true
 				v.LocationExpr = locationExpr

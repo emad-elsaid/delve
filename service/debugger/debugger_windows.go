@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/go-delve/delve/service/api"
+	"github.com/emad-elsaid/delve/service/api"
 )
 
 func attachErrorMessage(pid int, err error) error {

@@ -3,9 +3,9 @@ package linutil
 import (
 	"fmt"
 
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/dwarf/regnum"
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/dwarf/regnum"
+	"github.com/emad-elsaid/delve/pkg/proc"
 )
 
 // ARM64Registers is a wrapper for sys.PtraceRegs.

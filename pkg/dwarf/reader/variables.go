@@ -3,7 +3,7 @@ package reader
 import (
 	"debug/dwarf"
 
-	"github.com/go-delve/delve/pkg/dwarf/godwarf"
+	"github.com/emad-elsaid/delve/pkg/dwarf/godwarf"
 )
 
 type Variable struct {

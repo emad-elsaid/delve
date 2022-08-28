@@ -12,8 +12,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/go-delve/delve/pkg/config"
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/config"
+	"github.com/emad-elsaid/delve/pkg/proc"
 )
 
 // RecordAsync configures rr to record the execution of the specified

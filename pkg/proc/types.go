@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/go-delve/delve/pkg/dwarf/godwarf"
-	"github.com/go-delve/delve/pkg/dwarf/reader"
-	"github.com/go-delve/delve/pkg/goversion"
+	"github.com/emad-elsaid/delve/pkg/dwarf/godwarf"
+	"github.com/emad-elsaid/delve/pkg/dwarf/reader"
+	"github.com/emad-elsaid/delve/pkg/goversion"
 )
 
 // The kind field in runtime._type is a reflect.Kind value plus

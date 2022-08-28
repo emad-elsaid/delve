@@ -4,7 +4,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/go-delve/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc"
 )
 
 // Process represents all of the information the debugger
@@ -247,7 +247,7 @@ func (dbp *nativeProcess) initialize(path string, debugInfoDirs []string) (*proc
 		//  - on Windows asyncpreempt is incompatible with debuggers, see:
 		//    https://github.com/golang/go/issues/36494
 		//  - freebsd's backend is generally broken and asyncpreempt makes it even more so, see:
-		//    https://github.com/go-delve/delve/issues/1754
+		//    https://github.com/emad-elsaid/delve/issues/1754
 		//  - on linux/arm64 asyncpreempt can sometimes restart a sequence of
 		//    instructions, if the sequence happens to contain a breakpoint it will
 		//    look like the breakpoint was hit twice when it was "logically" only

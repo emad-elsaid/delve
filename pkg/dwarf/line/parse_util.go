@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/go-delve/delve/pkg/dwarf/util"
+	"github.com/emad-elsaid/delve/pkg/dwarf/util"
 )
 
 const (

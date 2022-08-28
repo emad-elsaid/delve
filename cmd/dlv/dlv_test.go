@@ -21,13 +21,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-delve/delve/pkg/goversion"
-	protest "github.com/go-delve/delve/pkg/proc/test"
-	"github.com/go-delve/delve/pkg/terminal"
-	"github.com/go-delve/delve/service/dap"
-	"github.com/go-delve/delve/service/dap/daptest"
-	"github.com/go-delve/delve/service/debugger"
-	"github.com/go-delve/delve/service/rpc2"
+	"github.com/emad-elsaid/delve/pkg/goversion"
+	protest "github.com/emad-elsaid/delve/pkg/proc/test"
+	"github.com/emad-elsaid/delve/pkg/terminal"
+	"github.com/emad-elsaid/delve/service/dap"
+	"github.com/emad-elsaid/delve/service/dap/daptest"
+	"github.com/emad-elsaid/delve/service/debugger"
+	"github.com/emad-elsaid/delve/service/rpc2"
 	godap "github.com/google/go-dap"
 	"golang.org/x/tools/go/packages"
 )
@@ -184,7 +184,7 @@ func testOutput(t *testing.T, dlvbin, output string, delveCmds []string) (stdout
 	if err == nil {
 		// Sometimes delve on Windows can't remove the built binary before
 		// exiting and gets an "Access is denied" error when trying.
-		// See: https://travis-ci.com/go-delve/delve/jobs/296325131)
+		// See: https://travis-ci.com/emad-elsaid/delve/jobs/296325131)
 		// We have added a delay to gobuild.Remove, but to avoid any test
 		// flakiness, we guard against this failure here as well.
 		if runtime.GOOS != "windows" || !strings.Contains(err.Error(), "Access is denied") {
@@ -220,11 +220,11 @@ func getDlvBinInternal(t *testing.T, goflags ...string) (string, string) {
 
 	dlvbin := filepath.Join(tmpdir, "dlv.exe")
 	args := append([]string{"build", "-o", dlvbin}, goflags...)
-	args = append(args, "github.com/go-delve/delve/cmd/dlv")
+	args = append(args, "github.com/emad-elsaid/delve/cmd/dlv")
 
 	out, err := exec.Command("go", args...).CombinedOutput()
 	if err != nil {
-		t.Fatalf("go build -o %v github.com/go-delve/delve/cmd/dlv: %v\n%s", dlvbin, err, string(out))
+		t.Fatalf("go build -o %v github.com/emad-elsaid/delve/cmd/dlv: %v\n%s", dlvbin, err, string(out))
 	}
 
 	return dlvbin, tmpdir
@@ -552,7 +552,7 @@ func TestTypecheckRPC(t *testing.T) {
 		Mode: packages.NeedSyntax | packages.NeedTypesInfo | packages.NeedName | packages.NeedCompiledGoFiles | packages.NeedTypes,
 		Fset: fset,
 	}
-	pkgs, err := packages.Load(cfg, "github.com/go-delve/delve/service/rpc2")
+	pkgs, err := packages.Load(cfg, "github.com/emad-elsaid/delve/service/rpc2")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -560,7 +560,7 @@ func TestTypecheckRPC(t *testing.T) {
 	var serverMethods map[string]*types.Func
 	var info *types.Info
 	packages.Visit(pkgs, func(pkg *packages.Package) bool {
-		if pkg.PkgPath != "github.com/go-delve/delve/service/rpc2" {
+		if pkg.PkgPath != "github.com/emad-elsaid/delve/service/rpc2" {
 			return true
 		}
 		t.Logf("package found: %v", pkg.PkgPath)
@@ -1267,7 +1267,7 @@ func TestVersion(t *testing.T) {
 	if err != nil {
 		t.Fatalf("error executing `dlv version`: %v\n%s\n", err, got)
 	}
-	want1 := []byte("mod\tgithub.com/go-delve/delve")
+	want1 := []byte("mod\tgithub.com/emad-elsaid/delve")
 	want2 := []byte("dep\tgithub.com/google/go-dap")
 	if !bytes.Contains(got, want1) || !bytes.Contains(got, want2) {
 		t.Errorf("got %s\nwant %v and %v in the output", got, want1, want2)
@@ -1280,7 +1280,7 @@ func TestStaticcheck(t *testing.T) {
 		t.Skip("staticcheck not installed")
 	}
 	// default checks minus SA1019 which complains about deprecated identifiers, which change between versions of Go.
-	args := []string{"-tests=false", "-checks=all,-SA1019,-ST1000,-ST1003,-ST1016,-S1021,-ST1023", "github.com/go-delve/delve/..."}
+	args := []string{"-tests=false", "-checks=all,-SA1019,-ST1000,-ST1003,-ST1016,-S1021,-ST1023", "github.com/emad-elsaid/delve/..."}
 	// * SA1019 is disabled because new deprecations get added on every version
 	//   of Go making the output of staticcheck inconsistent depending on the
 	//   version of Go used to run it.

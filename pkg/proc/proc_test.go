@@ -23,17 +23,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-delve/delve/pkg/dwarf/frame"
-	"github.com/go-delve/delve/pkg/dwarf/op"
-	"github.com/go-delve/delve/pkg/dwarf/regnum"
-	"github.com/go-delve/delve/pkg/goversion"
-	"github.com/go-delve/delve/pkg/logflags"
-	"github.com/go-delve/delve/pkg/proc"
-	"github.com/go-delve/delve/pkg/proc/core"
-	"github.com/go-delve/delve/pkg/proc/gdbserial"
-	"github.com/go-delve/delve/pkg/proc/native"
-	protest "github.com/go-delve/delve/pkg/proc/test"
-	"github.com/go-delve/delve/service/api"
+	"github.com/emad-elsaid/delve/pkg/dwarf/frame"
+	"github.com/emad-elsaid/delve/pkg/dwarf/op"
+	"github.com/emad-elsaid/delve/pkg/dwarf/regnum"
+	"github.com/emad-elsaid/delve/pkg/goversion"
+	"github.com/emad-elsaid/delve/pkg/logflags"
+	"github.com/emad-elsaid/delve/pkg/proc"
+	"github.com/emad-elsaid/delve/pkg/proc/core"
+	"github.com/emad-elsaid/delve/pkg/proc/gdbserial"
+	"github.com/emad-elsaid/delve/pkg/proc/native"
+	protest "github.com/emad-elsaid/delve/pkg/proc/test"
+	"github.com/emad-elsaid/delve/service/api"
 )
 
 var normalLoadConfig = proc.LoadConfig{true, 1, 64, 64, -1, 0}
@@ -1963,7 +1963,7 @@ func TestIssue414(t *testing.T) {
 			var err error
 			// Stepping through the runtime is not generally safe so after we are out
 			// of main.main just use Next.
-			// See: https://github.com/go-delve/delve/pull/2082
+			// See: https://github.com/emad-elsaid/delve/pull/2082
 			if f == fixture.Source {
 				err = p.Step()
 			} else {
@@ -5469,7 +5469,7 @@ func TestVariablesWithExternalLinking(t *testing.T) {
 	// Tests that macOSDebugFrameBugWorkaround works.
 	// See:
 	//  https://github.com/golang/go/issues/25841
-	//  https://github.com/go-delve/delve/issues/2346
+	//  https://github.com/emad-elsaid/delve/issues/2346
 	withTestProcessArgs("testvariables2", t, ".", []string{}, protest.BuildModeExternalLinker, func(p *proc.Target, fixture protest.Fixture) {
 		assertNoError(p.Continue(), t, "Continue()")
 		str1Var := evalVariable(p, t, "str1")
@@ -5486,7 +5486,7 @@ func TestVariablesWithExternalLinking(t *testing.T) {
 func TestWatchpointsBasic(t *testing.T) {
 	skipOn(t, "not implemented", "freebsd")
 	skipOn(t, "not implemented", "386")
-	skipOn(t, "see https://github.com/go-delve/delve/issues/2768", "windows")
+	skipOn(t, "see https://github.com/emad-elsaid/delve/issues/2768", "windows")
 	protest.AllowRecording(t)
 
 	position1 := 19
@@ -5545,7 +5545,7 @@ func TestWatchpointsBasic(t *testing.T) {
 func TestWatchpointCounts(t *testing.T) {
 	skipOn(t, "not implemented", "freebsd")
 	skipOn(t, "not implemented", "386")
-	skipOn(t, "see https://github.com/go-delve/delve/issues/2768", "windows")
+	skipOn(t, "see https://github.com/emad-elsaid/delve/issues/2768", "windows")
 	protest.AllowRecording(t)
 
 	withTestProcess("databpcountstest", t, func(p *proc.Target, fixture protest.Fixture) {
@@ -5661,7 +5661,7 @@ func TestDwrapStartLocation(t *testing.T) {
 func TestWatchpointStack(t *testing.T) {
 	skipOn(t, "not implemented", "freebsd")
 	skipOn(t, "not implemented", "386")
-	skipOn(t, "see https://github.com/go-delve/delve/issues/2768", "windows")
+	skipOn(t, "see https://github.com/emad-elsaid/delve/issues/2768", "windows")
 	protest.AllowRecording(t)
 
 	position1 := 17
@@ -5900,7 +5900,7 @@ func TestCallInjectionFlagCorruption(t *testing.T) {
 	// Since this problem exists in many versions of Go, instead of fixing
 	// debugCallV2, we work around this problem by restoring FLAGS, one extra
 	// time, after stepping out of debugCallV2.
-	// Fixes issue https://github.com/go-delve/delve/issues/2985
+	// Fixes issue https://github.com/emad-elsaid/delve/issues/2985
 	skipUnlessOn(t, "not relevant", "amd64")
 	protest.MustSupportFunctionCalls(t, testBackend)
 
